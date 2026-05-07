@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.start-page,
+.quiz-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(assets/blobs.png), url(assets/blobs-1.png);
+  background-repeat: no-repeat;
+  background-position: bottom left, top right;
+  color: #293264;
+}
+
+.start-page-title {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.start-page-description {
+  margin: 7px auto 29px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+.start-page-btn {
+  padding: 16px 29px;
+  border: none;
+  border-radius: 15px;
+  background-color: #4D5B9E;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #F5F7FB;
+  cursor: pointer;
+}
+
+.quiz-form {
+  max-width: 399px;
+}
+
+.question-block {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DBDEF0;
+}
+
+.question-title {
+  margin: 15px 0 12px 0;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.options {
+  display: flex;
+  gap: 12px;
+}
+
+.options input {
+  display: none;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 66px;
+  min-height: 20px;
+  padding: 4px 8px;
+  border: 1px solid #4D5B9E;
+  border-radius: 8px;
+}
+
+.option.correct {
+  background-color: #94D7A2;
+  border: none;
+}
+
+.option.wrong {
+  background-color: #F8BCBC;
+  color: #4D5B9E;
+  border: none;
+}
+
+.option.neutral {
+  color: #4D5B9E;
+  border-color: #4D5B9E;
+}
+
+.option:has(input:checked) {
+  background-color: #D6DBF5;
+  border: none;
+}
+
+.label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.64rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.result-text {
+  font-size: 0.8rem;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.check-btn {
+  display: flex;
+  padding: 11px 21px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #4D5B9E;
+  font-family: "Inter", sans-serif;
+  font-size: 0.64rem;
+  color: #F5F7FB;
+  cursor: pointer;
+}
