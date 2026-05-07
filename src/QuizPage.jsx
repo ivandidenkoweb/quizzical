@@ -26,7 +26,11 @@ export default function QuizPage(props) {
 			})
 	}, [])
 
-	function checkAnswer(formData) {
+	const [validationMessage, setValidationMessage] = useState("")
+
+	function checkAnswer(event) {
+		event.preventDefault()
+		const formData = new FormData(event.target)
 		const answers = {}
 		for (let [key, value] of formData.entries()) {
 			answers[key] = value
@@ -35,10 +39,11 @@ export default function QuizPage(props) {
 
 		const allAnswered = questions.every((_, index) => answers[`question-${index}`])
 		if (!allAnswered) {
-			alert("Answer all questions, please")
+			setValidationMessage("Please answer all questions before checking.")
 			return
 		}
 
+		setValidationMessage("")
 		const newResults = {}
 		questions.forEach((q, index) => {
 			const answer = answers[`question-${index}`]
@@ -59,7 +64,7 @@ export default function QuizPage(props) {
 
 	return (
 		<main className="quiz-page">
-			<form className="quiz-form" action={checkAnswer}>
+			<form className={`quiz-form ${props.isChecked ? "checked" : ""}`} onSubmit={checkAnswer}>
 				{questions.map((q, index) => (
 					<div key={index} className="question-block">
 						<h3 className="question-title">{q.text}</h3>
@@ -90,8 +95,7 @@ export default function QuizPage(props) {
 							})}
 						</div>
 					</div>
-				))}
-				<div className="result">
+				))}					{validationMessage ? <p className="validation-message">{validationMessage}</p> : null}				<div className="result">
 					{props.isChecked ? <span className="result-text">You scored {correctAnswers}/5 correct answers</span> : null}
 					{props.isChecked ? (
 						<button

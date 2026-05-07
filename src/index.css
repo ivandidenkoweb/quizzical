@@ -92,7 +92,7 @@
   border-color: #4D5B9E;
 }
 
-.option:has(input:checked) {
+.quiz-form:not(.checked) .option:has(input:checked) {
   background-color: #D6DBF5;
   border: none;
 }
@@ -109,6 +109,18 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.validation-message {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background-color: #FDEDEC;
+  color: #B02A2A;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+  border: 1px solid #F5C6CB;
 }
 
 .result-text {
