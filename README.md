@@ -1,6 +1,6 @@
 # Quizzical 🧠
 
-[![Demo](./src/assets/quizzical.png)](https://admirable-belekoy-1e17d6.netlify.app/)
+[![Demo](./src/assets/quizzical.png)](https://ivandidenko-quizzical.netlify.app/)
 
 > Click the image to view the demo. The link will open in the current tab (press `Ctrl + Click` or `Cmd + Click` to open in a new tab).
 
